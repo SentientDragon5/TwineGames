@@ -50,6 +50,7 @@ You hit the lock on the door with a brick. The brick seems to crumble a bit, but
 You hit the lock again and the brick falls to pieces. The lock bends and breaks. Good news, the lock is broken, bad news you wedged the door by hitting it. You probably need something to pry it open.
 (if: $hasX is true) [[Pry using the X]]
 [[return]]
+(set: $doorOpen to true)
 
 
 :: Look out and down {"position":"275,575","size":"100,100"}
@@ -68,7 +69,7 @@ Your prison cell looks Northwest over the sea.
 :: Pry using the X {"position":"400,825","size":"100,100"}
 The door pops open!
 You are out! Success
-(if:$inmateAwake is true) The inmate says "Hey While you are at it open my cell!"
+(if:$inmateAwake is true)[ The inmate says "Hey While you are at it open my cell!"]
 
 
 :: Pull brick {"position":"525,575","size":"100,100"}
@@ -137,6 +138,7 @@ What will you do?
 (if: $inmateAwake is true)[["How often does the guard come"]]
 (if:$sawBrick is true) [[Reach into the inmate's cell]]
 (if: $hasBrick is true)[[Hit lock with Brick]]
+(if: $doorOpen is true and $hasX is true)[[Pry using the X]]
 
 
 :: StoryStylesheet [stylesheet]
