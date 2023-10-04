@@ -9,8 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Adventure.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Adventure" startnode="16" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="9C62C4F2-057A-4A89-BC44-B1E1B1BCCEEB" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
-body:before {
+<tw-storydata name="Adventure" startnode="16" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="9C62C4F2-057A-4A89-BC44-B1E1B1BCCEEB" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body:before {
   /*http://twinery.org/questions/60307/blurring-a-background-image*/
 	content: '';
   background-color: red;
@@ -62,16 +61,18 @@ You look out and down and see a brick sticking out a lot on the western side of 
 Your prison cell looks Northwest over the sea. 
 [[Look out and down]]
 [[return]]</tw-passagedata><tw-passagedata pid="10" name="Pry using the X" tags="" position="400,825" size="100,100">The door pops open!
-You are out! Success
-(if:$inmateAwake is true)[ The inmate says &quot;Hey While you are at it open my cell!&quot;]</tw-passagedata><tw-passagedata pid="11" name="Pull brick" tags="" position="525,575" size="100,100">(set:$hasBrick to true) You got a brick!
+(if:$inmateAwake is true)[ The inmate says &quot;Hey While you are at it open my cell!&quot;]
+You are out! Success!
+The End.</tw-passagedata><tw-passagedata pid="11" name="Pull brick" tags="" position="525,575" size="100,100">(set:$hasBrick to true) You got a brick!
 [[return]]</tw-passagedata><tw-passagedata pid="12" name="Reach into the inmate&#39;s cell" tags="" position="525,325" size="100,100">(if: $inmateAwake is true)[The inmate sees you. &quot;Hey! what are you trying to do??&quot;
 [[Respond &quot;Break out. I think I know a way&quot;]]
-[[Respond &quot;None of your buisness&quot;]]
+[[Respond &quot;None of your business&quot;]]
 ](else:)[You reach into the cell 
 [[Pull brick]]
 ]</tw-passagedata><tw-passagedata pid="13" name="Respond &quot;Break out. I think I know a way&quot;" tags="" position="525,450" size="100,100">&quot;There is no way you will make it past the guard...&quot; says the inmate. 
 [[Pull brick]] 
-[[return]]</tw-passagedata><tw-passagedata pid="14" name="Respond &quot;None of your buisness&quot;" tags="" position="650,450" size="100,100">The inmate goes back to his nap.</tw-passagedata><tw-passagedata pid="15" name="Start" tags="" position="275,200" size="100,100">(set: $inmateAwake to false)\
+[[return]]</tw-passagedata><tw-passagedata pid="14" name="Respond &quot;None of your business&quot;" tags="" position="650,450" size="100,100">The inmate goes back to his nap.
+[[return]]</tw-passagedata><tw-passagedata pid="15" name="Start" tags="" position="275,200" size="100,100">(set: $inmateAwake to false)\
 (set: $hasX to false)\
 (set: $checkedWindow to false)\
 You wake up in a cell. There is a ray of sun coming in through the window. You feel the mist of the sea outside. The bars are metal, and there is hay along the floor to pad it. There is a pile of hay in the Northern corner, and the Western Corner. There is a sleeping inmate in the next cell over. 
