@@ -14,7 +14,7 @@ Adventure
 
 :: "How do I get out of here?" {"position":"150,450","size":"100,100"}
 The inmate replies "Oh there is no getting out of here. Take a nap with me."
-[[return]] 
+[[return]]
 
 
 :: "How often does the guard come" {"position":"25,450","size":"100,100"}
@@ -25,44 +25,44 @@ The inmate replies "The guard comes occasionally. Usually like 4 times a day. Th
 :: Check North Corner Haybale {"position":"275,325","size":"100,100"}
 You check the Northern Haybale.
 You don't find any objects, but you find a groove in the shape of a V pointed East.
-[[return]] 
+[[return]]
 
 
 :: Check Wall {"position":"400,450","size":"100,100"}
 It appears the extruded brick is in the inmate's cell
-[[Reach into the inmate's cell]] 
+[[Reach into the inmate's cell]]
 
 
 :: Check Western Corner Haybale {"position":"400,325","size":"100,100"}
 (set: $hasX to true)
 You check the Western Haybale.
 You find an odd shaped piece of metal in the shape of an X.
-[[return]] 
+[[return]]
 
 
 :: Hit lock with Brick {"position":"400,575","size":"100,100"}
 You hit the lock on the door with a brick. The brick seems to crumble a bit, but the lock seemed to be damaged now.
 [[Hit the lock again]]
-[[return]] 
+[[return]]
 
 
 :: Hit the lock again {"position":"400,700","size":"100,100"}
 You hit the lock again and the brick falls to pieces. The lock bends and breaks. Good news, the lock is broken, bad news you wedged the door by hitting it. You probably need something to pry it open.
 (if: $hasX is true) [[Pry using the X]]
-[[return]] 
+[[return]]
 
 
 :: Look out and down {"position":"275,575","size":"100,100"}
 (set: $sawBrick to true)
 You look out and down and see a brick sticking out a lot on the western side of your cell. It looks like it may be past your bars.
-[[return]] 
+[[return]]
 
 
 :: Look out window {"position":"275,450","size":"100,100"}
 You look out the window. 
 Your prison cell looks Northwest over the sea. 
 [[Look out and down]]
-[[return]] 
+[[return]]
 
 
 :: Pry using the X {"position":"400,825","size":"100,100"}
@@ -73,7 +73,7 @@ You are out! Success
 
 :: Pull brick {"position":"525,575","size":"100,100"}
 (set:$hasBrick to true) You got a brick!
-[[return]] 
+[[return]]
 
 
 :: Reach into the inmate's cell {"position":"525,325","size":"100,100"}
@@ -85,11 +85,10 @@ You are out! Success
 ]
 
 
-
 :: Respond "Break out. I think I know a way" {"position":"525,450","size":"100,100"}
 "There is no way you will make it past the guard..." says the inmate. 
 [[Pull brick]] 
-[[return]] 
+[[return]]
 
 
 :: Respond "None of your buisness" {"position":"650,450","size":"100,100"}
@@ -109,14 +108,10 @@ You wake up in a cell. There is a ray of sun coming in through the window. You f
 
 
 :: Start 1 {"position":"275,75","size":"100,100"}
-Prison Adventure
+<div class="message">//Prison Adventure
 Logan Shehane
 
-[[Start]] 
-
-
-:: Untitled Passage 1 {"position":"625,750","size":"100,100"}
-
+[[Start]]//</div>
 
 
 :: Wake inmate {"position":"150,325","size":"100,100"}
@@ -143,3 +138,40 @@ What will you do?
 (if:$sawBrick is true) [[Reach into the inmate's cell]]
 (if: $hasBrick is true)[[Hit lock with Brick]]
 
+
+:: StoryStylesheet [stylesheet]
+
+body:before {
+  /*http://twinery.org/questions/60307/blurring-a-background-image*/
+	content: '';
+  background-color: red;
+
+	z-index: -1;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+  background-image:url(https://i.pinimg.com/originals/85/d0/f0/85d0f00714c1ee6a1d35cb76edf8dbdc.png);
+  background-size:cover;
+  filter: saturate(40%) contrast(40%) brightness(50%) blur(4px);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+tw-story{
+  background-color: #00000000
+}
+tw-passage {
+  color: #ffffff;
+}tw-link {color: #FFB726}
+.visited {color:#B76354}
+div.message {
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 1em;
+	padding: 10px;
+}
